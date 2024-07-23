@@ -37,6 +37,26 @@ class Gradebook:
         if student:
             return student.calculate_GPA()
         return None
+    
+    def delete_student(self, student_id):
+        student = self.get_student(student_id)
+        if student:
+            self.students.remove(student)
+            return True
+        return False
+
+    def get_course(self, course_id):
+        for course in self.courses:
+            if course.course_id == course_id:
+                return course
+        return None
+
+    def delete_course(self, course_id):
+        course = self.get_course(course_id)
+        if course:
+            self.courses.remove(course)
+            return True
+        return False
 
     def add_grade_to_student(self, student_id, course_id, grade):
         student = self.find_student_by_id(student_id)

@@ -42,6 +42,20 @@ def calculate_gpa(gradebook):
     else:
         print(f"Student with ID {student_id} not found.")
 
+def delete_student(gradebook):
+    student_id = int(input("Enter student ID to delete: "))
+    if gradebook.delete_student(student_id):
+        print(f"Student with ID {student_id} deleted.")
+    else:
+        print(f"Student with ID {student_id} not found.")
+
+def delete_course(gradebook):
+    course_id = int(input("Enter course ID to delete: "))
+    if gradebook.delete_course(course_id):
+        print(f"Course with ID {course_id} deleted.")
+    else:
+        print(f"Course with ID {course_id} not found.")
+
 def calculate_ranking(gradebook):
     gradebook.calculate_ranking()
 
